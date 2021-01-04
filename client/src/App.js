@@ -2,9 +2,6 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import routes from "./config/routes";
-import SearchBox from './pages/SearchBox';
-import ItemList from "./pages/ItemList";
-import ItemDetail from './pages/ItemDetail';
 
 function App() {
   return (

@@ -1,15 +1,17 @@
 @import "./variables";
 
-.search-box{
+.container{
 
-    &__header{
+    background-color: $primary-ligth-grey;
+    min-height: 100vh;
+
+    &__search-box{
         background-color: $primary-yellow;
         height: 55px;
         display: flex;
         align-items: center;
 
         .ant-form-item{
-            
             width: 100%;
 
             &-control-input-content{
@@ -19,11 +21,8 @@
 
         &-form{
             display: flex;
-            width: 100%;
-
-            &-logo{
-                margin-left: 149px;
-            }
+            width: 75%;
+            margin: auto;
 
             &-input{
                 height: 37px;
@@ -31,14 +30,14 @@
                 border: 0;
                 border-radius: 3px 0px 0px 3px;
                 padding-left: 15px;
-                width:75%;
-                font-size: 16px;
+                width:100%;
+                font-size: 18px;
 
                 &::placeholder{
                     color: $grey;
                 }
             }
-    
+
             &-img{
                 background-color: $primary-ligth-grey;
                 padding: 11px 11px 10px 11px;
@@ -47,7 +46,5 @@
             }
 
         }
-
-        
     }
 }

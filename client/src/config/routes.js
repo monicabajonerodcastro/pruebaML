@@ -2,8 +2,6 @@ import SearchBox from "../pages/SearchBox";
 import ItemList from "../pages/ItemList";
 import ItemDetail from "../pages/ItemDetail";
 
-{/** Dinamic routes definition */}
-
 const routes = [
     {
         path: "/",
