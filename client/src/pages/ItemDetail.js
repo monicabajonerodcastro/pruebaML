@@ -1,19 +1,29 @@
 import React from "react";
-import { useParams } from "react-router-dom"; 
 import { Layout, Button } from "antd";
+import { Route, Redirect } from "react-router-dom";
 import PriceFormatter from "../components/utils/PriceFormatter";
 
+import SearchBox from "../pages/SearchBox";
 import '../scss/ItemDetail.scss';
-import MockDetail from "../resources/mockDetail.json";
-import MockDescription from "../resources/mockDescription.json";
 
 
-export default function ItemDetail(){
-    console.log(useParams());
-
+export default function ItemDetail(props){
+    console.log(props);
     const { Header, Content } = Layout;
 
      //TODO revisar la ruta superior de donde se obtiene
+
+    const detail = props && props.location && props.location.state ? props.location.state : null;
+
+    if(!detail){
+        return (
+            <>
+            <Route path="/" component={SearchBox}/>
+            <Redirect to="/" />
+            </>
+        )
+    }
+    
 
     return (
         <Layout className="item-detail">
@@ -23,11 +33,11 @@ export default function ItemDetail(){
             <Content className="item-detail__content">
                 <div className="item-detail__content-item-container">
                     <div className="item-detail__content-item-container-img">
-                        <img src={MockDetail.thumbnail} alt={MockDetail.title}/>
+                        <img src={detail.thumbnail} alt={detail.title}/>
                         <div className="item-detail__content-item-container-description">
                             <span>Descripción del producto</span>
                             <div>
-                                {MockDescription.plain_text}
+                                {detail.description.plain_text}
                             </div>
                         </div>
                         
@@ -35,15 +45,15 @@ export default function ItemDetail(){
                     <div className="item-detail__content-item-container-detail">
                         <div>
                             <span>
-                                <Condition condition={MockDetail.condition}/> - 
-                                <SoldQuantity soldQuantity={MockDetail.sold_quantity}/>
+                                <Condition condition={detail.condition}/> - 
+                                <SoldQuantity soldQuantity={detail.sold_quantity}/>
                             </span>
                         </div>
                         <div>
-                            <span>{MockDetail.title}</span>
+                            <span>{detail.title}</span>
                         </div>
                         <div>
-                            <span><PriceFormatter price={MockDetail.price}/></span>
+                            <span><PriceFormatter price={detail.price}/></span>
                         </div>
                         <div>
                             <Button className="item-detail__content-item-container-detail-button">Comprar</Button>

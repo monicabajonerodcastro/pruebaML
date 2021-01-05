@@ -16,7 +16,7 @@
         margin-top: $small-space;
         border-radius: 3px;
         background-color: $white;
-
+        
         &-item-container{
             margin: 0px $small-space;
             padding: $small-space 0px;
@@ -25,9 +25,9 @@
 
             &-img{
                 margin-right: $small-space;
+                text-align: center;
                 img{
                     height: 180px;
-                    width: 180px;
                     border-radius: 4px;
                 }
             }
