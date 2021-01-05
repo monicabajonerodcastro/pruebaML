@@ -20,7 +20,7 @@
         &-item-container{
             margin: 0px $small-space;
             padding: $small-space 0px;
-            border-bottom: 1px solid $grey-extra-ligth;
+            border-bottom: 1px solid $extra-ligth-grey;
             display: flex;
 
             &-img{
@@ -40,7 +40,7 @@
                 width: 54%;
                 padding-top: $big-space;
                 font-size: 18px;
-                color: $grey-dark;
+                color: $dark-grey;
 
                 div{
                     margin-bottom: $big-space;
@@ -63,7 +63,7 @@
                 width: 20%;
                 font-size: 12px;
                 padding-top: $big-space;
-                color: $grey-medium;
+                color: $medium-grey;
             }
         }
     }

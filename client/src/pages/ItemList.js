@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-import Numeral from "numeral";
+import PriceFormatter from "../components/utils/PriceFormatter";
 import FreeShipping from "../assets/png/ic_shipping.png";
 
 import MockResponse from "../resources/mockQuery.json"; 
@@ -47,8 +47,4 @@ export default function ItemList(){
             </Content>
         </Layout>
     );
-}
-
-function PriceFormatter(price){
-    return Numeral(price.price).format('$ 0,0[.]00'); 
 }

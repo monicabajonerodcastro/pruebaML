@@ -14,7 +14,7 @@ const routes = [
                 exact: true
             },
             {
-                path: "/items/detail",
+                path: "/items/:id",
                 component: ItemDetail,
                 exact: true
             }
