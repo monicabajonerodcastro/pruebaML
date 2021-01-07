@@ -4,9 +4,13 @@
 .item-detail{
     margin: $small-space auto;
     width: 75%;
-   
+    background: none;   
 
     &__header{
+        background: none;
+        line-height: normal;
+        height: auto;
+        padding: 0 $small-space;
         span{
             color: $grey;
             font-size: 14px;
@@ -30,8 +34,11 @@
                 margin-left: $big-space;
 
                 img{
-                    min-width: 450px;
-                    max-width: 680px;
+                    width: 680px;
+                }
+
+                .ant-carousel{
+                    width: 680px;
                 }
             }
 

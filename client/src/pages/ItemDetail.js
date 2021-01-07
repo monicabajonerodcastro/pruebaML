@@ -1,14 +1,13 @@
 import React from "react";
-import { Layout, Button } from "antd";
+import { Layout, Button, Carousel } from "antd";
 import { Route, Redirect } from "react-router-dom";
 import PriceFormatter from "../components/utils/PriceFormatter";
 
 import SearchBox from "../pages/SearchBox";
+
 import '../scss/ItemDetail.scss';
 
-
 export default function ItemDetail(props){
-    console.log(props);
     const { Header, Content } = Layout;
 
      //TODO revisar la ruta superior de donde se obtiene
@@ -23,7 +22,7 @@ export default function ItemDetail(props){
             </>
         )
     }
-    
+
 
     return (
         <Layout className="item-detail">
@@ -33,7 +32,7 @@ export default function ItemDetail(props){
             <Content className="item-detail__content">
                 <div className="item-detail__content-item-container">
                     <div className="item-detail__content-item-container-img">
-                        <img src={detail.thumbnail} alt={detail.title}/>
+                        <ImagesForCarousel pictures={detail.pictures} title={detail.title}/>
                         <div className="item-detail__content-item-container-description">
                             <span>Descripción del producto</span>
                             <div>
@@ -80,4 +79,24 @@ function SoldQuantity({soldQuantity}){
     }else{
         return <span> {soldQuantity} vendido</span>;
     }
+}
+
+function renderImage(index, picture, title){
+    return(
+        <div key={index}>
+            <img src={picture.url} alt={title} />
+        </div>
+    )
+    
+}
+
+
+function ImagesForCarousel({pictures, title}){
+    return (
+        <Carousel autoplay>{
+            pictures.map((picture, index) => renderImage(index, picture, title))
+        }
+        </Carousel>
+    );
+    
 }

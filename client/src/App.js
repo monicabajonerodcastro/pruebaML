@@ -1,5 +1,6 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import "antd/dist/antd.css";
 
 import routes from "./config/routes";
 

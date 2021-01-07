@@ -4,8 +4,13 @@
 .item-list{
     margin: $small-space auto;
     width: 75%;
+    background: none;
 
     &__header{
+        background: none;
+        line-height: normal;
+        height: auto;
+        padding: 0 $small-space;
         span{
             color: $grey;
             font-size: 14px;
@@ -16,7 +21,7 @@
         margin-top: $small-space;
         border-radius: 3px;
         background-color: $white;
-        
+
         &-item-container{
             margin: 0px $small-space;
             padding: $small-space 0px;

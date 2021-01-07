@@ -11,6 +11,8 @@ import "../scss/ItemList.scss";
 
 export default function ItemList(props){
     //TODO revisar la ruta superior de donde se obtiene
+    //TODO cuando no trae ningun item
+    //TODO cambiar el favicon
 
     const { Header, Content } = Layout;
     const history = useHistory();
