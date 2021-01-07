@@ -31,16 +31,14 @@
             &-img{
                 margin-right: $small-space;
                 text-align: center;
+                width: 26%;
+                cursor: pointer;
                 img{
                     height: 180px;
                     border-radius: 4px;
                 }
             }
             
-            &-img{
-                width: 26%;
-            }
-
             &-detail{
                 width: 54%;
                 padding-top: $big-space;
@@ -51,6 +49,9 @@
                     margin-bottom: $big-space;
                     &:nth-child(1){
                         font-size: 24px;
+                    }
+                    &:nth-child(2){
+                        cursor: pointer;
                     }
                 }
 
@@ -69,6 +70,18 @@
                 font-size: 12px;
                 padding-top: $big-space;
                 color: $medium-grey;
+            }
+
+            &-not-found{
+                display: flex;
+                align-items: center;
+                width: 80%;
+                margin: auto;
+                padding: 50px 0;
+                font-size: 25px;
+                div{
+                    margin-left: 50px;
+                }
             }
         }
     }

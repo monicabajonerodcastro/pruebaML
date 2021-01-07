@@ -5,14 +5,13 @@ import SearchBox from "../pages/SearchBox";
 import PriceFormatter from "../components/utils/PriceFormatter";
 import FreeShipping from "../assets/png/ic_shipping.png";
 import { getDetailsApi } from "../api/details";
+import NoItems from "../assets/png/ic_not_found.PNG";
 
 
 import "../scss/ItemList.scss";
 
 export default function ItemList(props){
     //TODO revisar la ruta superior de donde se obtiene
-    //TODO cuando no trae ningun item
-    //TODO cambiar el favicon
 
     const { Header, Content } = Layout;
     const history = useHistory();
@@ -78,12 +77,27 @@ function renderItemList(item, index, history){
                 <span>{item.address.state_name}</span>
             </div>
         </div>
-)
+    )
     
 }
 
-function ItemsRender({items, history}){
-    return(
-        items.map((item, index) => renderItemList(item, index, history))
+function renderNoItems(){
+    return (
+         <div className="item-list__content-item-container-not-found">
+            <img src={NoItems} alt="Product not found"/>
+            <div>
+                <span>No hay productos que coincidan con tu búsqueda</span>
+            </div>
+        </div>
     )
+}
+
+function ItemsRender({items, history}){
+    if(items.length > 0){
+        return(
+            items.map((item, index) => renderItemList(item, index, history))
+        )
+    }else{
+        return renderNoItems(); 
+    }
 }
