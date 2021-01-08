@@ -4,16 +4,34 @@ import { Layout, Form, Input, Button } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import SearchImage from "../assets/png/ic_Search.png";
 import Logo from "../assets/png/Logo_ML.png";
-import { searchItemsApi } from "../api/items";
+import { sendRequest } from "../api/requestSender";
 
 import "../scss/SearchBox.scss";
 
+/**
+ * 
+ * SearchBox component
+ * 
+ * This component shows the search box that will appear at the top of the page.
+ * 
+ * @param {props} props the props object set when the routes were defined
+ */
 export default function SearchBox(props){
     const { routes } = props;
     const { Header, Content } = Layout;
     const [ loading, setLoading ] = useState(false);
     const history = useHistory();
 
+    /**
+     * 
+     * setSearchIcon function
+     * 
+     * This function sets the search icon depending on the status of the request.
+     * If the request haven't been sent or the request finished already the search image is displayed,
+     * else the loading icon is displayed.
+     * 
+     * @param {boolean} loadingIcon the state of the action
+     */
     const setSearchIcon = (loadingIcon) => {
         if(!loadingIcon){
             return <img 
@@ -25,8 +43,18 @@ export default function SearchBox(props){
         }
     }
 
+    /**
+     * 
+     * onFinish function
+     * 
+     * This function wil be executed when the submit of the form is sent. The function prepares
+     * the request to be sent to the back-end.
+     * 
+     * @param {object} search The search criteria to be sent  
+     */
+
      const onFinish = async ({search}) => { 
-        const items = await searchItemsApi(search);
+        const items = await sendRequest(`/items?search=${search}`);
         setLoading(false);
         history.push(
             {
@@ -61,6 +89,14 @@ export default function SearchBox(props){
     );
 }
 
+/**
+ * 
+ * InternalRoutes component
+ * 
+ * This component renders the routes dynamically according to the routes defined into de routes.js file.
+ * 
+ * @param {object} routes The routes defined to be set into the application 
+ */
 function InternalRoutes({routes}){
     return (
         <Switch>{

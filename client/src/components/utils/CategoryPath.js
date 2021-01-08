@@ -1,3 +1,13 @@
+/**
+ * 
+ * CategoryPathRender function
+ * 
+ * This function returns an element with the path to be displayed at the top of the list of items.
+ * The path is built dynamically through of the array of categories.
+ * 
+ * @param {array} categoryPath  
+ */
+
 export default function CategoryPathRender({categoryPath}){
     var breadcrumb = [];
     categoryPath.map((category, _index) => {

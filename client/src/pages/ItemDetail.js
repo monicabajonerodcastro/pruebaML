@@ -8,6 +8,15 @@ import SearchBox from "../pages/SearchBox";
 
 import '../scss/ItemDetail.scss';
 
+/**
+ * The ItemDetail component
+ * 
+ * This component renders the item detail layout. When the user sends select an item 
+ * through the click on it, the front-end sends the petition to the back-end and 
+ * renders the detail.
+ * 
+ * @param {object} props the props sending from the latest component.
+ */
 export default function ItemDetail(props){
     const { Header, Content } = Layout;
 
@@ -63,6 +72,15 @@ export default function ItemDetail(props){
     );
 }
 
+/**
+ * 
+ * Condition component
+ * 
+ * This component map the condition of the item in order to show the item condition in Spanish
+ * 
+ * @param {boolean} condition The condition variable is assigned by destructuring and it is
+ *      a flag that indicates if the item is new or used in the condition param 
+ */
 function Condition({condition}){
     const conditionLabels =  {
         "used": "Usado",
@@ -70,6 +88,15 @@ function Condition({condition}){
     }
     return conditionLabels[condition];
 }
+
+/**
+ * SoldQuantity component
+ * 
+ * This component returns the appropriate word (in singular or plural) according to the sold quantity
+ * 
+ * @param {Integer} soldQuantity The soldQuantity variable is assigned by destructuring and it is
+ *      a flag that indicates the sold units of the item. 
+ */
 
 function SoldQuantity({soldQuantity}){
     if(soldQuantity !== 1){
@@ -79,6 +106,17 @@ function SoldQuantity({soldQuantity}){
     }
 }
 
+/**
+ * 
+ * renderImage function
+ * 
+ * This function renders dynamically the images to the Antd.Carousel according to the pictures 
+ * returned in the detail item array.
+ * 
+ * @param {Integer} index the position within the array
+ * @param {String} picture the URL of the picture
+ * @param {String} title the title of the item
+ */
 function renderImage(index, picture, title){
     return(
         <div key={index}>
@@ -88,7 +126,18 @@ function renderImage(index, picture, title){
     
 }
 
-
+/**
+ * 
+ * ImagesForCarousel component
+ * 
+ * This component renders the Carousel with the item images. This component uses the 
+ * Carousel component exposed by Antd.
+ * 
+ * see https://ant.design/components/carousel/
+ * 
+ * @param {array} pictures
+ * @param {string} title
+ */
 function ImagesForCarousel({pictures, title}){
     return (
         <Carousel autoplay>{

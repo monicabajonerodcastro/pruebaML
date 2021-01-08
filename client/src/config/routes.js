@@ -2,6 +2,9 @@ import SearchBox from "../pages/SearchBox";
 import ItemList from "../pages/ItemList";
 import ItemDetail from "../pages/ItemDetail";
 
+/**
+ * This file defines the routes that will be exposed and rendered in the layout.
+ */
 const routes = [
     {
         path: "/",
