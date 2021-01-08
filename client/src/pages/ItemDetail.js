@@ -2,6 +2,7 @@ import React from "react";
 import { Layout, Button, Carousel } from "antd";
 import { Route, Redirect } from "react-router-dom";
 import PriceFormatter from "../components/utils/PriceFormatter";
+import CategoryPathRender from "../components/utils/CategoryPath"
 
 import SearchBox from "../pages/SearchBox";
 
@@ -9,8 +10,6 @@ import '../scss/ItemDetail.scss';
 
 export default function ItemDetail(props){
     const { Header, Content } = Layout;
-
-     //TODO revisar la ruta superior de donde se obtiene
 
     const detail = props && props.location && props.location.state ? props.location.state : null;
 
@@ -23,11 +22,10 @@ export default function ItemDetail(props){
         )
     }
 
-
     return (
         <Layout className="item-detail">
             <Header className="item-detail__header"> 
-                <span>Electronica, Audio y Video &gt; iPod &gt; Reproductores &gt; iPod Touch &gt; 32GB</span>
+                <CategoryPathRender categoryPath={detail.categoryPath}/>
             </Header>
             <Content className="item-detail__content">
                 <div className="item-detail__content-item-container">
