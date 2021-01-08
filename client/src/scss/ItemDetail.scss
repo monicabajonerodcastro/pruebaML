@@ -34,15 +34,17 @@
 
                 img{
                     width: 680px;
+                    max-height: 680px;
                 }
 
                 .ant-carousel{
                     width: 680px;
+                    height: min-content;
                 }
             }
 
             &-detail{
-                padding-right: 20px;
+                padding: 0 20px;
                 div{
                     &:nth-child(1){
                         font-size: 14px;
