@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.use(`/api/${API_VERSION}/`, routes);
 
-app.listen(port, "127.0.0.1", function() {
+app.listen(port, IP_SERVER, function() {
     console.log(`Server listening on http://${IP_SERVER}:${port}/api/${API_VERSION}`);
 });
 

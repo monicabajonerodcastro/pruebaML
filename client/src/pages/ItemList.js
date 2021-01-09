@@ -6,7 +6,7 @@ import PriceFormatter from "../components/utils/PriceFormatter";
 import CategoryPathRender from "../components/utils/CategoryPath"
 import FreeShipping from "../assets/png/ic_shipping.png";
 import { sendRequest } from "../api/requestSender";
-import NoItems from "../assets/png/ic_not_found.PNG";
+import NoItems from "../assets/png/ic_not_found.png";
 
 import "../scss/ItemList.scss";
 
@@ -55,7 +55,9 @@ export default function ItemList(props){
  * getItemDetail function
  * 
  * This function sends a request to the back-end in order to get the detail of the
- * selected item. 
+ * selected item. The function is marked as async because the Component needs the
+ * data returned by this function and the request to de back-end is executed in 
+ * an async way.
  * 
  * @param {object} item The selected item to be sent 
  * @param {object} history The history object
