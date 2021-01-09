@@ -3,7 +3,7 @@ import {BASE_PATH, API_VERSION} from "./config";
 /**
  * getDetailsAPI function
  * 
- * This function send the request to the back-end and return the response in a json format
+ * This function sends the request to the back-end and returns the response in a json format
  * 
  * @param {string} path the path where the request will be sent
  */

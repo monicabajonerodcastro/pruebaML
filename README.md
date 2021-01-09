@@ -1,10 +1,10 @@
 # Mercado Libre - FrontEnd Challenge
 
-This repositoy contents the challenge for the FrontEnd position in Mercado Libre company.
+This repositoy containst the challenge for the FrontEnd position at Mercado Libre company.
 
-  - autor: Monica Bajonero D'castro
+  - author: Monica Bajonero D'castro
 
-# Features!
+## Technology Stack
 
 The FrontEnd was developed in javascript using the following components:
 
@@ -21,7 +21,7 @@ The BackEnd was developed in javascript as well using the following components:
   - Mocha as the test framework - https://mochajs.org/
 
 
-### Installation
+## Installation
 
 This application requires [Node.js](https://nodejs.org/) v6+ to run.
 
@@ -30,20 +30,39 @@ Install the dependencies and devDependencies for both, client and server.
 ```sh
 $ cd pruebaML
 $ cd server
-$ npm install -d or yarn install
+$ npm install -d 
+```
+or
+
+```sh
+$ cd pruebaML
+$ cd server
+$ yarn 
 ```
 
-For start the client:
+For starting the client:
+
+```sh
+$ cd client
+$ npm start
+```
+or
+
+```sh
+$ cd client
+$ yarn start
+```
+
+For starting the server:
 
 ```sh
 $ cd client
 $ npm start
 ```
 
-For start the server:
+or
 
 ```sh
 $ cd client
-$ npm start or npm dev
+$ yarn start
 ```
-
