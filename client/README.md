@@ -15,6 +15,7 @@ This folder containst all related with the client
 │   ├── App.js
 │   ├── index.css
 │   ├── index.js
+│   ├── reportWebVitals.js
 │   ├── api
 │   │   ├── config.js
 │   │   ├── requestSender.js
